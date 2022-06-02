@@ -32,6 +32,7 @@ public No parse(String[] dados) {
 		Stack<String> simbolos = new Stack<String>();
 		Stack<No> nos = new Stack<No>();
 
+		
 		No esq, dir;
 
 		for (int i = 0; i < dados.length; i++) {
