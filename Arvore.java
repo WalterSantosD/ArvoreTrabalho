@@ -4,20 +4,31 @@ import java.util.Stack;
 
 public class Arvore {
 
-	No Operacao(String simb, No esq, No dir) {
-		if (simb.equals("+"))
+public No Operacao(String simb, No esq, No dir) {
+		if (simb.equals("+")) {
 			return new Soma(esq, dir);
-		else if (simb.equals("-"))
+		}
+		
+		else if (simb.equals("-")){
 			return new Subtracao(esq, dir);
-		else if (simb.equals("*"))
+		}
+			
+		else if (simb.equals("*")){
 			return new Multiplicacao(esq, dir);
-		else if (simb.equals("/"))
+		}
+			
+		else if (simb.equals("/")){
 			return new Divisao(esq, dir);
-		else
-			return null;
+		}
+			
+		else {
+			throw new IllegalArgumentException();	
+		}
+			
 	}
 
-	No parse(String[] dados){
+public No parse(String[] dados) {
+		
 		Stack<String> simbolos = new Stack<String>();
 		Stack<No> nos = new Stack<No>();
 
